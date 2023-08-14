@@ -2,7 +2,13 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+const[user, setUser] = useState('')
 
+function handleUser(event){
+setUser(event.target.value)
+console.log(user)
+}
+console.log(user)
   return (
     <>
 <header>
@@ -13,7 +19,11 @@ function App() {
   <form action="">
     <div>
       <label htmlFor="usuario">Usuário</label>
-      <input type="text" id="usuario" placeholder='Digite seu usuario'/>
+      <input type="text" 
+      id="usuario" 
+      placeholder='Digite seu usuario'
+      onChange={handleUser}
+      />
     </div>
     <div>
       <label htmlFor="senha">Senha</label>
